@@ -1,3 +1,4 @@
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -115,8 +116,10 @@ td i{
 }
 
 .right-section {
-  width: 68%;
+
   background-color: #236E94;
+  width: 68%;
+  height: 100%;
 
 }
 
@@ -282,4 +285,35 @@ td i{
 .boton-certificaciones:hover {
   background-color: #236E94; /* Green */
   color: white;
+}
+
+
+@keyframes square-in-bottom-right {
+  from {
+    clip-path: inset(0 100% 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[transition-style="transition-entrance"] {
+  animation: 3s cubic-bezier(.25, 1, .30, 1) square-in-bottom-right both;
+}
+
+
+
+@keyframes square-out-bottom-right {
+  from {
+    clip-path: inset(0 0 0 0);
+  }
+  to {
+    clip-path: inset(100% 0 0 100%);
+  }
+}
+
+
+
+.animated {
+  animation: 2s cubic-bezier(.25, 1, .30, 1) square-out-bottom-right both;
 }
